@@ -84,8 +84,9 @@ client.members
 ## Requirements
 
 - Ruby >= 3.4
-- [LegionIO](https://github.com/LegionIO/LegionIO) framework (for framework mode)
+- [LegionIO](https://github.com/LegionIO/LegionIO) framework (optional for standalone client usage)
 - HashiCorp Consul cluster (any version with HTTP API v1)
+- `faraday` >= 2.0
 
 ## License
 
