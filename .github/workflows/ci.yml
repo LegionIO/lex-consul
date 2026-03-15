@@ -1,25 +1,16 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
 
 jobs:
-  rubocop:
-    name: RuboCop
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.4'
-          bundler-cache: true
-      - run: bundle exec rubocop
+  ci:
+    uses: LegionIO/.github/.github/workflows/ci.yml@main
 
-  rspec:
-    name: RSpec
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.4'
-          bundler-cache: true
-      - run: bundle exec rspec
+  release:
+    needs: ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    uses: LegionIO/.github/.github/workflows/release.yml@main
+    secrets:
+      rubygems-api-key: ${{ secrets.RUBYGEMS_API_KEY }}
