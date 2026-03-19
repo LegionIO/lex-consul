@@ -10,6 +10,7 @@ Legion Extension that connects LegionIO to HashiCorp Consul. Provides runners fo
 
 **GitHub**: https://github.com/LegionIO/lex-consul
 **License**: MIT
+**Version**: 0.1.0
 
 ## Architecture
 
@@ -47,6 +48,8 @@ Legion::Extensions::Consul
 | `/v1/status/` | Status | leader, peers |
 
 ## Testing
+
+30 specs across 9 spec files.
 
 ```bash
 bundle install
