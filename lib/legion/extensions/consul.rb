@@ -9,6 +9,7 @@ require 'legion/extensions/consul/runners/health'
 require 'legion/extensions/consul/runners/session'
 require 'legion/extensions/consul/runners/event'
 require 'legion/extensions/consul/runners/status'
+require 'legion/extensions/consul/runners/partitions'
 require 'legion/extensions/consul/client'
 
 module Legion

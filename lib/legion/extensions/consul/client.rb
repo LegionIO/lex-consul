@@ -21,6 +21,7 @@ module Legion
         include Runners::Session
         include Runners::Event
         include Runners::Status
+        include Runners::Partitions
 
         attr_reader :opts
 
