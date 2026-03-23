@@ -57,6 +57,12 @@ gem install lex-consul
 - `leader` - Get Raft leader address
 - `peers` - List Raft peer addresses
 
+### Partitions (`Runners::Partitions`) — Consul Enterprise
+- `list_partitions` - List all admin partitions
+- `get_partition` - Get a partition by name
+- `create_partition` - Create or update a partition
+- `delete_partition` - Delete a partition
+
 ## Standalone Usage
 
 ```ruby

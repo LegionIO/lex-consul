@@ -10,7 +10,7 @@ Legion Extension that connects LegionIO to HashiCorp Consul. Provides runners fo
 
 **GitHub**: https://github.com/LegionIO/lex-consul
 **License**: MIT
-**Version**: 0.1.0
+**Version**: 0.1.1
 
 ## Architecture
 
@@ -23,7 +23,8 @@ Legion::Extensions::Consul
 │   ├── Health            # Node health, service checks, checks by state
 │   ├── Session           # Distributed lock sessions (create, destroy, renew)
 │   ├── Event             # Custom event fire and list
-│   └── Status            # Raft leader and peers
+│   ├── Status            # Raft leader and peers
+│   └── Partitions        # Admin Partitions CRUD (Enterprise)
 ├── Helpers/
 │   └── Client            # Faraday connection builder (Consul HTTP API v1)
 └── Client                # Standalone client class (includes all runners)
@@ -46,10 +47,11 @@ Legion::Extensions::Consul
 | `/v1/session/` | Session | create_session, destroy_session, session_info, list_sessions, node_sessions, renew_session |
 | `/v1/event/` | Event | fire_event, list_events |
 | `/v1/status/` | Status | leader, peers |
+| `/v1/partitions` | Partitions | list_partitions, get_partition, create_partition, delete_partition (Enterprise) |
 
 ## Testing
 
-30 specs across 9 spec files.
+30 specs across 10 spec files.
 
 ```bash
 bundle install
